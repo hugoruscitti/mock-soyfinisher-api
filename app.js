@@ -90,6 +90,8 @@ server.route({
     var name = request.payload.name || null;
     var passwd = request.payload.passwd || null;
 
+    console.log(request.payload);
+
     if (!name || !passwd) {
       return reply("Tienes que indicar name y passwd").code(422);
     }
@@ -102,7 +104,10 @@ server.route({
         client: {
            key: key,
            expires: "2017-11-12 12:37:45",
-           role: "tagger"
+           role: "photographer",
+           photographer: {
+             filename_prefix: "FRU"
+           }
         }
       });
     }
@@ -115,10 +120,7 @@ server.route({
         client: {
            key: key,
            expires: "2017-11-12 12:37:45",
-           role: "photographer",
-           photographer: {
-             filename_prefix: "FRU"
-           }
+           role: "tagger"
         }
       });
     }
