@@ -59,7 +59,7 @@ function get_auth_user(req) {
 
 server.connection({
   host: '0.0.0.0',
-  port: 8000
+  port: 8182
 });
 
 server.route({
@@ -170,5 +170,5 @@ server.route({
   }
 });
 
-console.log("Running on http://0.0.0.0:8000")
+console.log("Running on http://0.0.0.0:8182")
 server.start();
