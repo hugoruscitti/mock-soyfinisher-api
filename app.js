@@ -32,12 +32,12 @@ db.photos = [{
 ];
 
 db.events = [ {
-    id: 1233,
+    id: 'RD3312X',
     title: '10K River Plate',
     where: 'Palermo - Capital Federal, Argentina',
     date: '08 de diciembre del 2014'
   }, {
-    id: 3399,
+    id: 'AF223RT',
     title: 'Dua Azul',
     where: 'Azul - Buenos Aires, Argentina',
     date: '11 de mayo del 2014'
@@ -145,10 +145,10 @@ server.route({
   method: 'GET',
   path: '/events/',
   handler: function(req, reply) {
-    if (get_auth_user(req))
+    //if (get_auth_user(req))
       reply({events: db.events});
-    else
-      reply("Usuario no autenticado").code(402);
+    //else
+    //  reply("Usuario no autenticado").code(402);
   }
 });
 
